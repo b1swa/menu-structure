@@ -20,7 +20,14 @@ function get(menu_id, section_id) {
                                             }
                                         } }
                                   })
+        if(section){
+            return {status: 200, data: section};
+        }else{
+            return {status: 404, msg: 'Data not found'};
+        }
     }
+
+    return {status: 400, msg: 'Inappropriate data'}
 }
 
 module.exports.get = get;
